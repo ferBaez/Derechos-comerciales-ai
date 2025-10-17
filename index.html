@@ -91,8 +91,14 @@
             width: 100%;
             height: 100%;
         }
+        /* Estilos del carrusel */
         .swiper-button-next, .swiper-button-prev {
             color: var(--hitster-orange) !important;
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+        }
+        .swiper-button-next:hover, .swiper-button-prev:hover {
+            transform: scale(0.85);
         }
         .swiper-pagination-bullet-active {
             background-color: var(--hitster-orange) !important;
@@ -151,8 +157,8 @@
             <p class="max-w-3xl mx-auto text-lg md:text-xl animated-item" style="transition-delay: 0.2s;">Una alianza estratégica para dominar el ecosistema visual del futuro, hoy.</p>
             
             <!-- Video Carousel -->
-            <div class="max-w-4xl mx-auto mt-12 animated-item" style="transition-delay: 0.4s;">
-                <div class="swiper-container video-carousel rounded-xl shadow-2xl overflow-hidden border-4 border-white dark:border-gray-800">
+            <div class="max-w-5xl mx-auto mt-12 animated-item relative" style="transition-delay: 0.4s;">
+                <div class="swiper-container video-carousel max-w-4xl mx-auto rounded-xl shadow-2xl overflow-hidden border-4 border-white dark:border-gray-800">
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide">
@@ -181,10 +187,10 @@
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
-                    <!-- Add Navigation -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-prev left-0 hidden md:flex"></div>
+                <div class="swiper-button-next right-0 hidden md:flex"></div>
             </div>
         </div>
     </header>
@@ -542,6 +548,10 @@
         // Lógica para el carrusel de videos
         const swiper = new Swiper('.video-carousel', {
             loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -553,10 +563,14 @@
         });
 
         swiper.on('slideChange', function () {
-            // Detener todos los videos
+            // Detener todos los videos al cambiar de slide
             const iframes = document.querySelectorAll('.swiper-slide iframe');
             iframes.forEach(iframe => {
-                iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+                try {
+                    iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+                } catch(e) {
+                    // Ignorar errores si el iframe no está listo o es de otro origen
+                }
             });
         });
 
