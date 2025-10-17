@@ -1006,7 +1006,11 @@
 
         // Lógica para el carrusel de videos
         const swiper = new Swiper('.video-carousel', {
-            loop: false,
+            loop: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
