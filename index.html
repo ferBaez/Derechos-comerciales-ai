@@ -47,6 +47,7 @@
             --coppel-blue: #0D47A1;
             --hitster-orange: #FF6F00;
             --dark-text: #212121;
+            --light-text: #424242; /* Color de texto mejorado para modo claro */
             --light-bg: #FFFFFF;
             --light-bg-alt: #F8F9FA;
             --dark-bg: #0D1117;
@@ -57,6 +58,8 @@
         body { font-family: 'Roboto', sans-serif; background-color: var(--light-bg); color: var(--dark-text); transition: background-color 0.3s ease, color 0.3s ease; padding-top: var(--nav-height); }
         .dark body { background-color: var(--dark-bg); color: var(--light-bg); }
         h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        p { color: var(--light-text); }
+        .dark p { color: #B0B0B0; } /* Color de texto para modo oscuro */
         .gradient-text { background: linear-gradient(90deg, var(--coppel-blue), var(--hitster-orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; }
         .dark .gradient-text { background: linear-gradient(90deg, #64B5F6, #FFCA28); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .section-card { background-color: white; transition: transform 0.3s ease, box-shadow 0.3s ease; }
@@ -72,6 +75,20 @@
         .animated-item.is-visible { opacity: 1; transform: translateY(0); }
         .bg-pattern { background-image: radial-gradient(circle, rgba(0,0,0,0.03) 1px, transparent 1px); background-size: 20px 20px; }
         .dark .bg-pattern { background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -82,10 +99,10 @@
                 <svg class="logo-svg hitster h-8 w-auto" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo de Hitster Ai"><text x="0" y="30" font-family="Poppins, sans-serif" font-size="30" font-weight="bold">hitster Ai</text></svg>
             </a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#summary" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition">Resumen</a>
                 <a href="#solutions" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition">Soluciones</a>
                 <a href="#video" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition">Video</a>
                 <a href="#differentiator" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition">Diferenciador</a>
+                <a href="#legal-guarantee" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition">Garantía</a>
             </div>
             <div class="hidden md:flex items-center gap-4">
                  <a href="https://calendar.app.google/nWMuRNmpovr8zTzA7" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-2 px-5 rounded-full text-sm">Agendar Demo</a>
@@ -103,10 +120,10 @@
         </div>
          <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 absolute top-16 left-0 right-0 shadow-lg">
-            <a href="#summary" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Resumen</a>
             <a href="#solutions" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Soluciones</a>
             <a href="#video" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Video</a>
             <a href="#differentiator" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Diferenciador</a>
+            <a href="#legal-guarantee" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Garantía</a>
              <div class="p-4 border-t border-gray-200 dark:border-gray-700">
                 <a href="https://calendar.app.google/nWMuRNmpovr8zTzA7" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center text-white font-bold py-3 px-5 rounded-full text-base">Agendar Demo</a>
              </div>
@@ -123,7 +140,20 @@
                 <svg class="logo-svg hitster h-10 md:h-12 w-auto" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo de Hitster Ai"><text x="0" y="30" font-family="Poppins, sans-serif" font-size="30" font-weight="bold">hitster Ai</text></svg>
             </div>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 tracking-tight gradient-text animated-item">La Evolución del Contenido Retail</h1>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-600 dark:text-gray-300 animated-item" style="transition-delay: 0.2s;">Una alianza estratégica para dominar el ecosistema visual del futuro, hoy.</p>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl animated-item" style="transition-delay: 0.2s;">Una alianza estratégica para dominar el ecosistema visual del futuro, hoy.</p>
+            
+            <!-- YouTube Video Embed -->
+            <div class="max-w-4xl mx-auto mt-12 animated-item" style="transition-delay: 0.4s;">
+                <div class="video-wrapper rounded-xl shadow-2xl overflow-hidden border-4 border-white dark:border-gray-800">
+                    <iframe 
+                        src="https://www.youtube.com/embed/bPThroAxlFQ?si=rNa143bTxwUM2pj4" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -183,7 +213,7 @@
 
         <section id="video" aria-labelledby="video-heading" class="py-16 md:py-20">
             <h2 id="video-heading" class="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text animated-item">La Revolución del Video Cinematográfico</h2>
-            <p class="text-center max-w-3xl mx-auto text-gray-600 dark:text-gray-300 mb-12 animated-item">La era del video de alta producción democratizado. Genere spots con una calidad visual y coherencia nunca antes vistas, a una fracción del costo y tiempo.</p>
+            <p class="text-center max-w-3xl mx-auto mb-12 animated-item">La era del video de alta producción democratizado. Genere spots con una calidad visual y coherencia nunca antes vistas, a una fracción del costo y tiempo.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="section-card p-8 rounded-xl shadow-lg animated-item">
                     <div class="flex items-center gap-4 mb-4">
@@ -204,7 +234,7 @@
         
         <section id="differentiator" aria-labelledby="differentiator-heading" class="py-16 md:py-20">
              <h2 id="differentiator-heading" class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text animated-item">Nuestro Diferenciador: Más que un Proveedor, un Socio</h2>
-             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center max-w-4xl mx-auto">
                  <div class="animated-item p-6">
                     <div class="flex justify-center mb-4"><svg class="w-16 h-16 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
                     <h3 class="font-bold text-xl mb-2">Tecnología Curada</h3>
@@ -215,12 +245,30 @@
                     <h3 class="font-bold text-xl mb-2">Enfoque de Partnership</h3>
                     <p class="text-sm text-justify">Nos integramos con sus equipos. Entendemos sus objetivos de negocio y alineamos la tecnología para cumplirlos, actuando como una extensión de su departamento de innovación.</p>
                  </div>
-                 <div class="animated-item p-6" style="transition-delay: 0.4s;">
-                     <div class="flex justify-center mb-4"><svg class="w-16 h-16 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
-                    <h3 class="font-bold text-xl mb-2">Garantía Legal Integral</h3>
-                    <p class="text-sm text-justify">Nuestra cesión de derechos es total y sin ambigüedades. Cada creación es un activo 100% de Coppel, blindado legalmente para su uso sin restricciones en cualquier medio, a perpetuidad.</p>
-                 </div>
              </div>
+        </section>
+
+        <section id="legal-guarantee" aria-labelledby="legal-heading" class="bg-light-bg-alt dark:bg-card-dark-bg py-16 md:py-20 -mx-4 sm:-mx-6 md:-mx-8 px-4 sm:px-6 md:px-8 rounded-2xl bg-pattern">
+            <div class="container mx-auto text-center max-w-3xl">
+                <div class="animated-item">
+                    <div class="flex justify-center mb-4"><svg class="w-16 h-16 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
+                    <h2 id="legal-heading" class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Garantía Legal y Cesión de Derechos</h2>
+                    <p class="text-justify mb-6">Entendemos que la titularidad del contenido es un pilar para Coppel. El material generado por IA, en su estado puro, reside en una zona legalmente ambigua. Nuestro proceso elimina esta incertidumbre: la intervención creativa de nuestro equipo (edición, branding, composición, y post-producción) transforma el material base en una **obra derivada única y original**. A través de nuestro contrato de alianza, cedemos el 100% de la titularidad de esta obra final a Coppel, otorgando una propiedad intelectual clara, documentada y sin riesgos para su uso sin restricciones en cualquier medio, a perpetuidad.</p>
+                    
+                    <p class="text-sm font-semibold mb-2 uppercase tracking-wider text-orange-500">Reproducir Mensaje Personal</p>
+                    <div class="max-w-md mx-auto animated-item rounded-xl overflow-hidden shadow-lg">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1-5I13-nNdCPPCAgJlIJLoDeRrmH5HpRT/preview" 
+                            width="100%" 
+                            height="120" 
+                            allow="autoplay" 
+                            frameborder="0" 
+                            class="bg-white dark:bg-gray-800"
+                            title="Mensaje de Audio Personal sobre Garantía Legal">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="roadmap" aria-labelledby="roadmap-heading" class="animated-item py-16 md:py-20">
@@ -288,9 +336,19 @@
 
         <section id="cta" aria-labelledby="cta-heading" class="text-center bg-white dark:bg-gray-900 py-16 md:py-20 -mx-4 sm:-mx-6 md:-mx-8 px-4 sm:px-6 md:px-8 rounded-t-2xl shadow-inner animated-item">
             <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold mb-4 max-w-2xl mx-auto">El Futuro del Retail es Visual.</h2>
-            <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300 mb-8">Agendemos una demostración y diseñemos juntos el roadmap para la transformación visual y cinematográfica de Coppel.</p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://studio--hitsterai.us-central1.hosted.app/es#hero" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg w-full sm:w-auto">Ver Casos de Éxito</a>
+            <p class="max-w-3xl mx-auto text-lg mb-8">Navegue por nuestros casos de éxito o agende una demostración para diseñar juntos el roadmap que llevará a Coppel al siguiente nivel de innovación visual.</p>
+            
+            <div class="max-w-md mx-auto mb-8 cursor-pointer group animated-item" id="pdf-modal-trigger" style="transition-delay: 0.2s;">
+                 <div class="section-card p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex items-center gap-4 text-left">
+                     <svg class="w-12 h-12 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                     <div>
+                         <h4 class="font-bold text-lg">Ver Portafolio de Casos de Éxito</h4>
+                         <p class="text-sm">Explore nuestro portafolio de imágenes con IA.</p>
+                     </div>
+                 </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 animated-item" style="transition-delay: 0.4s;">
                 <a href="https://calendar.app.google/nWMuRNmpovr8zTzA7" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg w-full sm:w-auto" style="background-color: var(--coppel-blue);">Agendar Demo Estratégica</a>
             </div>
         </section>
@@ -305,6 +363,20 @@
             <p class="mt-4 text-sm text-gray-400">&copy; 2025 hitster Ai. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- PDF Modal -->
+    <div id="pdf-modal" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-card-dark-bg rounded-lg shadow-xl w-full max-w-4xl h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b dark:border-gray-700">
+                <h3 class="text-lg font-bold">Portafolio de Casos de Éxito</h3>
+                <button id="pdf-modal-close" class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white">&times;</button>
+            </div>
+            <div class="flex-grow p-1">
+                <iframe id="pdf-iframe" src="" class="w-full h-full" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         // Lógica para el interruptor de tema
@@ -367,6 +439,32 @@
         animatedItems.forEach(item => {
             observer.observe(item);
         });
+
+        // Lógica para el modal del PDF
+        const pdfModal = document.getElementById('pdf-modal');
+        const pdfModalTrigger = document.getElementById('pdf-modal-trigger');
+        const pdfModalClose = document.getElementById('pdf-modal-close');
+        const pdfIframe = document.getElementById('pdf-iframe');
+        const pdfUrl = 'https://drive.google.com/file/d/1XGu6W82oDzSs2CLddJd8BucbFfxUTQNA/preview';
+
+        pdfModalTrigger.addEventListener('click', () => {
+            pdfIframe.src = pdfUrl;
+            pdfModal.classList.remove('hidden');
+        });
+
+        pdfModalClose.addEventListener('click', () => {
+            pdfModal.classList.add('hidden');
+            pdfIframe.src = ''; // Detiene la carga del PDF
+        });
+        
+        // Cierra el modal si se hace clic fuera del contenido
+        pdfModal.addEventListener('click', (event) => {
+            if (event.target === pdfModal) {
+                 pdfModal.classList.add('hidden');
+                 pdfIframe.src = '';
+            }
+        });
+
     </script>
 </body>
 </html>
