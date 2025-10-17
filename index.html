@@ -883,33 +883,54 @@
         const themeToggleBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
         const lightIcon = document.getElementById('theme-toggle-light-icon');
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            if(lightIcon) lightIcon.classList.remove('hidden');
-        } else {
-           if(darkIcon) darkIcon.classList.remove('hidden');
-        }
-        themeToggleBtn.addEventListener('click', function() {
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
-            if (localStorage.getItem('color-theme')) {
-                if (localStorage.getItem('color-theme') === 'light') {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                }
+        const mainNav = document.getElementById('main-nav');
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                if(lightIcon) lightIcon.classList.remove('hidden');
+                if(darkIcon) darkIcon.classList.add('hidden');
+                 mainNav.style.backgroundColor = 'var(--dark-bg)';
             } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                }
+                document.documentElement.classList.remove('dark');
+                if(darkIcon) darkIcon.classList.remove('hidden');
+                if(lightIcon) lightIcon.classList.add('hidden');
+                mainNav.style.backgroundColor = 'var(--nav-bg)';
             }
+        }
+        
+        let currentTheme = localStorage.getItem('color-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(currentTheme);
+
+        themeToggleBtn.addEventListener('click', function() {
+            currentTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+            localStorage.setItem('color-theme', currentTheme);
+            applyTheme(currentTheme);
+            handleNavScroll(); // Re-apply scroll effect
         });
+
+        // Lógica para el menú translúcido al hacer scroll
+        const nav = document.getElementById('main-nav');
+        const handleNavScroll = () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            const baseBgColor = isDark ? getComputedStyle(document.documentElement).getPropertyValue('--dark-bg').trim() : getComputedStyle(document.documentElement).getPropertyValue('--nav-bg').trim();
+            
+            if (window.scrollY > 10) {
+                 nav.style.backgroundColor = `rgba(${hexToRgb(baseBgColor)}, 0.8)`;
+                 nav.classList.add('backdrop-blur-sm');
+            } else {
+                 nav.style.backgroundColor = baseBgColor;
+                 nav.classList.remove('backdrop-blur-sm');
+            }
+        };
+
+        window.addEventListener('scroll', handleNavScroll);
+        
+        function hexToRgb(hex) {
+            let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
+        }
+
 
         // Lógica para el menú móvil
         const mobileMenuButton = document.getElementById('mobile-menu-button');
