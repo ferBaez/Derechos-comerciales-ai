@@ -16,6 +16,8 @@
     <meta name="author" content="hitster Ai">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ferbaez.github.io/Derechos-comerciales-ai/">
+    <link rel="alternate" hreflang="en" href="https://ferbaez.github.io/Derechos-comerciales-ai/?lang=en">
+    <link rel="alternate" hreflang="es" href="https://ferbaez.github.io/Derechos-comerciales-ai/">
 
     <!-- ============== OPEN GRAPH Y DATOS ESTRUCTURADOS ============== -->
     <meta property="og:title" content="Hitster Ai & Coppel: La Propuesta Definitiva para la Dominancia Visual en Retail">
@@ -92,7 +94,7 @@
             height: 100%;
         }
         /* Estilos del carrusel */
-        .swiper-slide {
+         .swiper-slide {
             -webkit-backface-visibility: hidden;
             -webkit-transform: translate3d(0,0,0);
         }
@@ -133,33 +135,48 @@
                 <svg class="logo-svg hitster h-8 w-auto" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo de Hitster Ai"><text x="0" y="30" font-family="Poppins, sans-serif" font-size="30" font-weight="bold">hitster Ai</text></svg>
             </a>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="#solutions" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition">Soluciones</a>
-                <a href="#video" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition">Video</a>
-                <a href="#differentiator" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition">Diferenciador</a>
-                <a href="#legal-guarantee" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition">Garantía</a>
+                <a href="#solutions" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition" data-lang-key="nav_solutions">Soluciones</a>
+                <a href="#video" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition" data-lang-key="nav_video">Video</a>
+                <a href="#differentiator" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition" data-lang-key="nav_differentiator">Diferenciador</a>
+                <a href="#legal-guarantee" class="text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-orange-400 transition" data-lang-key="nav_guarantee">Garantía</a>
             </div>
             <div class="hidden md:flex items-center gap-4">
-                 <a href="https://calendar.app.google/nWMuRNmpovr8zTzA7" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-2 px-5 rounded-full text-sm">Agendar Demo</a>
+                 
+                 <!-- Language Dropdown -->
+                <div class="relative" id="lang-dropdown">
+                    <button id="lang-button" class="flex items-center p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold text-sm">
+                         <span data-lang-key="nav_language">Idioma</span>
+                    </button>
+                    <div id="lang-menu" class="hidden absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-20">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" data-lang="es">Español</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" data-lang="en">English</a>
+                    </div>
+                </div>
+
                  <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                     <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                     <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm-.464 4.95a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414zM15 11a1 1 0 100-2h-1a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
                 </button>
             </div>
              <!-- Mobile Menu Button -->
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="text-gray-800 dark:text-gray-200 focus:outline-none">
+            <div class="md:hidden flex items-center gap-2">
+                <button id="mobile-menu-button" class="text-gray-800 dark:text-gray-200 focus:outline-none p-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </div>
          <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 dark:bg-gray-900/95 absolute top-16 left-0 right-0 shadow-lg">
-            <a href="#solutions" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Soluciones</a>
-            <a href="#video" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Video</a>
-            <a href="#differentiator" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Diferenciador</a>
-            <a href="#legal-guarantee" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800">Garantía</a>
-             <div class="p-4 border-t border-gray-200 dark:border-gray-700">
-                <a href="https://calendar.app.google/nWMuRNmpovr8zTzA7" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center text-white font-bold py-3 px-5 rounded-full text-base">Agendar Demo</a>
+            <a href="#solutions" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-lang-key="nav_solutions_mob">Soluciones</a>
+            <a href="#video" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-lang-key="nav_video_mob">Video</a>
+            <a href="#differentiator" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-lang-key="nav_differentiator_mob">Diferenciador</a>
+            <a href="#legal-guarantee" class="block py-3 px-4 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800" data-lang-key="nav_guarantee_mob">Garantía</a>
+             <div class="p-4 border-t border-gray-200 dark:border-gray-700 space-y-4">
+                <a href="https://calendar.app.google/nWMuRNmpovr8zTzA7" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-center text-white font-bold py-3 px-5 rounded-full text-base block" data-lang-key="nav_schedule_demo_mob">Agendar Demo</a>
+                <div class="flex justify-center gap-4">
+                    <button class="lang-switch-mob py-2 px-4 rounded-md bg-gray-200 dark:bg-gray-700 text-sm" data-lang="es">Español</button>
+                    <button class="lang-switch-mob py-2 px-4 rounded-md bg-gray-200 dark:bg-gray-700 text-sm" data-lang="en">English</button>
+                </div>
              </div>
         </div>
     </nav>
@@ -173,8 +190,8 @@
                 <span class="text-4xl md:text-6xl font-extrabold text-gray-400 dark:text-gray-600">&times;</span>
                 <svg class="logo-svg hitster h-10 md:h-12 w-auto" viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo de Hitster Ai"><text x="0" y="30" font-family="Poppins, sans-serif" font-size="30" font-weight="bold">hitster Ai</text></svg>
             </div>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 tracking-tight gradient-text animated-item">La Evolución del Contenido Retail</h1>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl animated-item" style="transition-delay: 0.2s;">Una alianza estratégica para dominar el ecosistema visual del futuro, hoy.</p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 tracking-tight gradient-text animated-item" data-lang-key="header_title">La Evolución del Contenido Retail</h1>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl animated-item" style="transition-delay: 0.2s;" data-lang-key="header_subtitle">Una alianza estratégica para dominar el ecosistema visual del futuro, hoy.</p>
             
             <!-- Video Carousel -->
             <div class="max-w-5xl mx-auto mt-12 animated-item relative video-carousel-container" style="transition-delay: 0.4s;">
@@ -218,34 +235,34 @@
     <main role="main" class="container mx-auto px-4 sm:px-6 md:px-8">
     
         <section id="summary" aria-labelledby="summary-heading" class="text-center py-16 md:py-20">
-            <h2 id="summary-heading" class="text-3xl md:text-4xl font-bold mb-12 gradient-text animated-item">Resumen Ejecutivo: El Valor de la Alianza</h2>
+            <h2 id="summary-heading" class="text-3xl md:text-4xl font-bold mb-12 gradient-text animated-item" data-lang-key="summary_title">Resumen Ejecutivo: El Valor de la Alianza</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="section-card p-6 md:p-8 rounded-xl shadow-lg animated-item">
-                    <h3 class="text-xl md:text-2xl font-bold mb-3">ROI Acelerado</h3>
-                    <p class="text-sm text-justify">Reduzca drásticamente los costos de producción de campañas y catálogos, mientras aumenta la conversión con visuales hiper-personalizados que conectan con cada segmento de cliente.</p>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3" data-lang-key="summary_1_title">ROI Acelerado</h3>
+                    <p class="text-sm text-justify" data-lang-key="summary_1_desc">Reduzca drásticamente los costos de producción de campañas y catálogos, mientras aumenta la conversión con visuales hiper-personalizados que conectan con cada segmento de cliente.</p>
                 </div>
                 <div class="section-card p-6 md:p-8 rounded-xl shadow-lg animated-item" style="transition-delay: 0.2s;">
-                    <h3 class="text-xl md:text-2xl font-bold mb-3">Velocidad Competitiva</h3>
-                    <p class="text-sm text-justify">Pase de semanas a horas en la conceptualización y ejecución de campañas. Responda a las tendencias del mercado en tiempo real y deje atrás a la competencia.</p>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3" data-lang-key="summary_2_title">Velocidad Competitiva</h3>
+                    <p class="text-sm text-justify" data-lang-key="summary_2_desc">Pase de semanas a horas en la conceptualización y ejecución de campañas. Responda a las tendencias del mercado en tiempo real y deje atrás a la competencia.</p>
                 </div>
                 <div class="section-card p-6 md:p-8 rounded-xl shadow-lg animated-item" style="transition-delay: 0.4s;">
-                    <h3 class="text-xl md:text-2xl font-bold mb-3">Soberanía Creativa</h3>
-                    <p class="text-sm text-justify">Obtenga la propiedad legal total de cada imagen y video. Convierta la IA en un activo seguro y 100% suyo, eliminando cualquier riesgo de propiedad intelectual.</p>
+                    <h3 class="text-xl md:text-2xl font-bold mb-3" data-lang-key="summary_3_title">Soberanía Creativa</h3>
+                    <p class="text-sm text-justify" data-lang-key="summary_3_desc">Obtenga la propiedad legal total de cada imagen y video. Convierta la IA en un activo seguro y 100% suyo, eliminando cualquier riesgo de propiedad intelectual.</p>
                 </div>
             </div>
         </section>
 
         <section id="solutions" aria-labelledby="solutions-heading" class="bg-light-bg-alt dark:bg-card-dark-bg py-16 md:py-20 -mx-4 sm:-mx-6 md:-mx-8 px-4 sm:px-6 md:px-8 rounded-2xl bg-pattern">
             <div class="container mx-auto">
-                <h2 id="solutions-heading" class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text animated-item">Soluciones Estratégicas y Casos de Uso</h2>
+                <h2 id="solutions-heading" class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text animated-item" data-lang-key="solutions_title">Soluciones Estratégicas y Casos de Uso</h2>
                 <div class="space-y-16">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animated-item">
                         <div class="max-w-md mx-auto">
-                            <h3 class="text-2xl font-bold mb-4">E-commerce de Alto Impacto</h3>
-                            <p class="text-justify mb-4">Transforme sus páginas de producto de estáticas a dinámicas, mostrando cada artículo en el contexto perfecto para motivar la compra.</p>
+                            <h3 class="text-2xl font-bold mb-4" data-lang-key="solution_1_title">E-commerce de Alto Impacto</h3>
+                            <p class="text-justify mb-4" data-lang-key="solution_1_desc">Transforme sus páginas de producto de estáticas a dinámicas, mostrando cada artículo en el contexto perfecto para motivar la compra.</p>
                             <ul class="list-disc list-inside space-y-2 text-sm">
-                                <li><b>Caso de Uso:</b> Generar imágenes de un sofá en 5 estilos de decoración distintos (minimalista, industrial, etc.).</li>
-                                <li><b>KPI Impactado:</b> Aumento del +15% en la tasa de conversión.</li>
+                                <li><b data-lang-key="use_case_title">Caso de Uso:</b> <span data-lang-key="solution_1_case">Generar imágenes de un sofá en 5 estilos de decoración distintos (minimalista, industrial, etc.).</span></li>
+                                <li><b data-lang-key="kpi_title">KPI Impactado:</b> <span data-lang-key="solution_1_kpi">Aumento del +15% en la tasa de conversión.</span></li>
                             </ul>
                         </div>
                         <div class="flex justify-center items-center section-card rounded-xl shadow-lg p-8 h-56 md:h-64">
@@ -254,11 +271,11 @@
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center animated-item">
                         <div class="md:order-last max-w-md mx-auto">
-                            <h3 class="text-2xl font-bold mb-4">Marketing y Publicidad Ágil</h3>
-                            <p class="text-justify mb-4">Produzca un volumen masivo de creatividades para redes sociales, display y email marketing, personalizadas para cada audiencia y plataforma.</p>
+                            <h3 class="text-2xl font-bold mb-4" data-lang-key="solution_2_title">Marketing y Publicidad Ágil</h3>
+                            <p class="text-justify mb-4" data-lang-key="solution_2_desc">Produzca un volumen masivo de creatividades para redes sociales, display y email marketing, personalizadas para cada audiencia y plataforma.</p>
                             <ul class="list-disc list-inside space-y-2 text-sm">
-                                <li><b>Caso de Uso:</b> Crear 100 variantes de un anuncio (imagen y video corto) para El Buen Fin en menos de 24 horas.</li>
-                                <li><b>KPI Impactado:</b> Reducción del 70% en el tiempo de lanzamiento de campañas.</li>
+                                <li><b data-lang-key="use_case_title_2">Caso de Uso:</b> <span data-lang-key="solution_2_case">Crear 100 variantes de un anuncio (imagen y video corto) para El Buen Fin en menos de 24 horas.</span></li>
+                                <li><b data-lang-key="kpi_title_2">KPI Impactado:</b> <span data-lang-key="solution_2_kpi">Reducción del 70% en el tiempo de lanzamiento de campañas.</span></li>
                             </ul>
                         </div>
                          <div class="flex justify-center items-center section-card rounded-xl shadow-lg p-8 h-56 md:h-64">
@@ -270,38 +287,38 @@
         </section>
 
         <section id="video" aria-labelledby="video-heading" class="py-16 md:py-20">
-            <h2 id="video-heading" class="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text animated-item">La Revolución del Video Cinematográfico</h2>
-            <p class="text-center max-w-3xl mx-auto mb-12 animated-item">La era del video de alta producción democratizado. Genere spots con una calidad visual y coherencia nunca antes vistas, a una fracción del costo y tiempo.</p>
+            <h2 id="video-heading" class="text-3xl md:text-4xl font-bold text-center mb-4 gradient-text animated-item" data-lang-key="video_title">La Revolución del Video Cinematográfico</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 animated-item" data-lang-key="video_subtitle">La era del video de alta producción democratizado. Genere spots con una calidad visual y coherencia nunca antes vistas, a una fracción del costo y tiempo.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="section-card p-8 rounded-xl shadow-lg animated-item">
                     <div class="flex items-center gap-4 mb-4">
                         <svg class="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                        <h3 class="text-2xl font-bold">Veo 3.1: Fotorrealismo</h3>
+                        <h3 class="text-2xl font-bold" data-lang-key="veo_title">Veo 3.1: Fotorrealismo</h3>
                     </div>
-                    <p class="text-sm text-justify">El motor ideal para spots de producto. Su capacidad para generar un fotorrealismo asombroso y mantener la coherencia de objetos en movimiento es perfecta para mostrar sus artículos con un nivel de detalle y credibilidad sin precedentes.</p>
+                    <p class="text-sm text-justify" data-lang-key="veo_desc">El motor ideal para spots de producto. Su capacidad para generar un fotorrealismo asombroso y mantener la coherencia de objetos en movimiento es perfecta para mostrar sus artículos con un nivel de detalle y credibilidad sin precedentes.</p>
                 </div>
                 <div class="section-card p-8 rounded-xl shadow-lg animated-item" style="transition-delay: 0.2s;">
                     <div class="flex items-center gap-4 mb-4">
                          <svg class="w-10 h-10 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M13 20l-4-16h6l4 16H9z"></path></svg>
-                        <h3 class="text-2xl font-bold">Sora 2 Pro: Storytelling</h3>
+                        <h3 class="text-2xl font-bold" data-lang-key="sora_title">Sora 2 Pro: Storytelling</h3>
                     </div>
-                    <p class="text-sm text-justify">La herramienta definitiva para campañas de branding. Permite crear mundos imaginativos y narrativas visuales complejas que conectan emocionalmente con la audiencia, llevando el storytelling de Coppel a una nueva dimensión.</p>
+                    <p class="text-sm text-justify" data-lang-key="sora_desc">La herramienta definitiva para campañas de branding. Permite crear mundos imaginativos y narrativas visuales complejas que conectan emocionalmente con la audiencia, llevando el storytelling de Coppel a una nueva dimensión.</p>
                 </div>
             </div>
         </section>
         
         <section id="differentiator" aria-labelledby="differentiator-heading" class="py-16 md:py-20">
-             <h2 id="differentiator-heading" class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text animated-item">Nuestro Diferenciador: Más que un Proveedor, un Socio</h2>
+             <h2 id="differentiator-heading" class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text animated-item" data-lang-key="differentiator_title">Nuestro Diferenciador: Más que un Proveedor, un Socio</h2>
              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center max-w-4xl mx-auto">
                  <div class="animated-item p-6">
                     <div class="flex justify-center mb-4"><svg class="w-16 h-16 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg></div>
-                    <h3 class="font-bold text-xl mb-2">Tecnología Curada</h3>
-                    <p class="text-sm text-justify">No dependemos de una sola API. Integramos y afinamos los mejores modelos del mundo (Veo, Sora, Nano-Banana) para el caso de uso específico del retail, ofreciendo una calidad inalcanzable.</p>
+                    <h3 class="font-bold text-xl mb-2" data-lang-key="differentiator_1_title">Tecnología Curada</h3>
+                    <p class="text-sm text-justify" data-lang-key="differentiator_1_desc">No dependemos de una sola API. Integramos y afinamos los mejores modelos del mundo (Veo, Sora, Nano-Banana) para el caso de uso específico del retail, ofreciendo una calidad inalcanzable.</p>
                  </div>
                  <div class="animated-item p-6" style="transition-delay: 0.2s;">
                      <div class="flex justify-center mb-4"><svg class="w-16 h-16 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
-                    <h3 class="font-bold text-xl mb-2">Enfoque de Partnership</h3>
-                    <p class="text-sm text-justify">Nos integramos con sus equipos. Entendemos sus objetivos de negocio y alineamos la tecnología para cumplirlos, actuando como una extensión de su departamento de innovación.</p>
+                    <h3 class="font-bold text-xl mb-2" data-lang-key="differentiator_2_title">Enfoque de Partnership</h3>
+                    <p class="text-sm text-justify" data-lang-key="differentiator_2_desc">Nos integramos con sus equipos. Entendemos sus objetivos de negocio y alineamos la tecnología para cumplirlos, actuando como una extensión de su departamento de innovación.</p>
                  </div>
              </div>
         </section>
@@ -310,10 +327,10 @@
             <div class="container mx-auto text-center max-w-3xl">
                 <div class="animated-item">
                     <div class="flex justify-center mb-4"><svg class="w-16 h-16 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div>
-                    <h2 id="legal-heading" class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Garantía Legal y Cesión de Derechos</h2>
-                    <p class="text-justify mb-6">Entendemos que la titularidad del contenido es un pilar para Coppel. El material generado por IA, en su estado puro, reside en una zona legalmente ambigua. Nuestro proceso elimina esta incertidumbre: la intervención creativa de nuestro equipo (edición, branding, composición, y post-producción) transforma el material base en una **obra derivada única y original**. A través de nuestro contrato de alianza, cedemos el 100% de la titularidad de esta obra final a Coppel, otorgando una propiedad intelectual clara, documentada y sin riesgos para su uso sin restricciones en cualquier medio, a perpetuidad.</p>
+                    <h2 id="legal-heading" class="text-3xl md:text-4xl font-bold mb-4 gradient-text" data-lang-key="legal_title">Garantía Legal y Cesión de Derechos</h2>
+                    <p class="text-justify mb-6" data-lang-key="legal_desc">Entendemos que la titularidad del contenido es un pilar para Coppel. El material generado por IA, en su estado puro, reside en una zona legalmente ambigua. Nuestro proceso elimina esta incertidumbre: la intervención creativa de nuestro equipo (edición, branding, composición, y post-producción) transforma el material base en una **obra derivada única y original**. A través de nuestro contrato de alianza, cedemos el 100% de la titularidad de esta obra final a Coppel, otorgando una propiedad intelectual clara, documentada y sin riesgos para su uso sin restricciones en cualquier medio, a perpetuidad.</p>
                     
-                    <p class="text-sm font-semibold mb-2 uppercase tracking-wider text-orange-500">Reproducir Mensaje Personal</p>
+                    <p class="text-sm font-semibold mb-2 uppercase tracking-wider text-orange-500" data-lang-key="audio_cta">Reproducir Mensaje Personal</p>
                     <div class="max-w-md mx-auto animated-item rounded-xl overflow-hidden shadow-lg">
                         <iframe 
                             src="https://drive.google.com/file/d/1-5I13-nNdCPPCAgJlIJLoDeRrmH5HpRT/preview" 
@@ -330,7 +347,7 @@
         </section>
 
         <section id="roadmap" aria-labelledby="roadmap-heading" class="animated-item py-16 md:py-20">
-            <h2 id="roadmap-heading" class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">Roadmap de Alianza: De la Fundación al Liderazgo</h2>
+            <h2 id="roadmap-heading" class="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text" data-lang-key="roadmap_title">Roadmap de Alianza: De la Fundación al Liderazgo</h2>
             <div class="relative max-w-5xl mx-auto px-4">
                 <!-- Desktop Roadmap -->
                 <div class="hidden md:block">
@@ -339,9 +356,9 @@
                         
                         <div class="relative flex items-center">
                             <div class="w-1/2 text-right pr-12">
-                                <h3 class="font-bold text-xl">Fase 1: Diseño de Sistema a Medida</h3>
-                                <p class="text-sm text-justify mt-2">Diseñamos un dashboard exclusivo para Coppel que automatiza el proceso de pedidos de material. Cada solicitud genera un ID único y se almacena en una base de datos para un seguimiento impecable.</p>
-                                <div class="text-orange-500 font-bold mt-2">Duración: 1 Mes</div>
+                                <h3 class="font-bold text-xl" data-lang-key="roadmap_1_title">Fase 1: Diseño de Sistema a Medida</h3>
+                                <p class="text-sm text-justify mt-2" data-lang-key="roadmap_1_desc">Diseñamos un dashboard exclusivo para Coppel que automatiza el proceso de pedidos de material. Cada solicitud genera un ID único y se almacena en una base de datos para un seguimiento impecable.</p>
+                                <div class="text-orange-500 font-bold mt-2"><span data-lang-key="duration">Duración:</span> <span data-lang-key="roadmap_1_duration">1 Mes</span></div>
                             </div>
                             <div class="w-1/2 pl-8"></div>
                             <div class="absolute left-1/2 -ml-4 bg-orange-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">1</div>
@@ -350,18 +367,18 @@
                         <div class="relative flex items-center">
                             <div class="w-1/2 pr-8"></div>
                             <div class="w-1/2 pl-12 text-left">
-                                <h3 class="font-bold text-xl">Fase 2: Inmersión y Alineación de Marca</h3>
-                                <p class="text-sm text-justify mt-2">Recibimos una capacitación profunda sobre el manual de marca de Coppel. Este paso es crucial para alinear nuestros modelos de IA y asegurar que cada generación visual respete y potencie la identidad, tono y valores de la marca.</p>
-                                <div class="text-blue-500 font-bold mt-2">Duración: 2 Semanas</div>
+                                <h3 class="font-bold text-xl" data-lang-key="roadmap_2_title">Fase 2: Inmersión y Alineación de Marca</h3>
+                                <p class="text-sm text-justify mt-2" data-lang-key="roadmap_2_desc">Recibimos una capacitación profunda sobre el manual de marca de Coppel. Este paso es crucial para alinear nuestros modelos de IA y asegurar que cada generación visual respete y potencie la identidad, tono y valores de la marca.</p>
+                                <div class="text-blue-500 font-bold mt-2"><span data-lang-key="duration_2">Duración:</span> <span data-lang-key="roadmap_2_duration">2 Semanas</span></div>
                             </div>
                             <div class="absolute left-1/2 -ml-4 bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">2</div>
                         </div>
 
                         <div class="relative flex items-center">
                             <div class="w-1/2 text-right pr-12">
-                                <h3 class="font-bold text-xl">Fase 3: Piloto Estratégico</h3>
-                                <p class="text-sm text-justify mt-2">Seleccionamos una línea de producto y definimos KPIs claros. Desplegamos una prueba de concepto para demostrar el valor y el ROI en un entorno controlado.</p>
-                                <div class="text-orange-500 font-bold mt-2">Duración: 2-3 Meses</div>
+                                <h3 class="font-bold text-xl" data-lang-key="roadmap_3_title">Fase 3: Piloto Estratégico</h3>
+                                <p class="text-sm text-justify mt-2" data-lang-key="roadmap_3_desc">Seleccionamos una línea de producto y definimos KPIs claros. Desplegamos una prueba de concepto para demostrar el valor y el ROI en un entorno controlado.</p>
+                                <div class="text-orange-500 font-bold mt-2"><span data-lang-key="duration_3">Duración:</span> <span data-lang-key="roadmap_3_duration">2-3 Meses</span></div>
                             </div>
                             <div class="w-1/2 pl-8"></div>
                             <div class="absolute left-1/2 -ml-4 bg-orange-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">3</div>
@@ -370,18 +387,18 @@
                          <div class="relative flex items-center">
                              <div class="w-1/2 pr-8"></div>
                             <div class="w-1/2 pl-12 text-left">
-                                <h3 class="font-bold text-xl">Fase 4: Integración y Capacitación</h3>
-                                <p class="text-sm text-justify mt-2">Integramos nuestra plataforma con sus sistemas (DAM, PIM) y capacitamos a sus equipos clave para maximizar la adopción y la eficiencia del flujo de trabajo.</p>
-                                 <div class="text-blue-500 font-bold mt-2">Duración: 4-6 Meses</div>
+                                <h3 class="font-bold text-xl" data-lang-key="roadmap_4_title">Fase 4: Integración y Capacitación</h3>
+                                <p class="text-sm text-justify mt-2" data-lang-key="roadmap_4_desc">Integramos nuestra plataforma con sus sistemas (DAM, PIM) y capacitamos a sus equipos clave para maximizar la adopción y la eficiencia del flujo de trabajo.</p>
+                                 <div class="text-blue-500 font-bold mt-2"><span data-lang-key="duration_4">Duración:</span> <span data-lang-key="roadmap_4_duration">4-6 Meses</span></div>
                             </div>
                             <div class="absolute left-1/2 -ml-4 bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">4</div>
                         </div>
 
                          <div class="relative flex items-center">
                             <div class="w-1/2 text-right pr-12">
-                                <h3 class="font-bold text-xl">Fase 5: Escalado Omnicanal</h3>
-                                <p class="text-sm text-justify mt-2">Expandimos la solución a todas las unidades de negocio. La IA se convierte en el motor estándar para la creación de contenido visual en todo el ecosistema Coppel.</p>
-                                 <div class="text-orange-500 font-bold mt-2">Duración: Continuo</div>
+                                <h3 class="font-bold text-xl" data-lang-key="roadmap_5_title">Fase 5: Escalado Omnicanal</h3>
+                                <p class="text-sm text-justify mt-2" data-lang-key="roadmap_5_desc">Expandimos la solución a todas las unidades de negocio. La IA se convierte en el motor estándar para la creación de contenido visual en todo el ecosistema Coppel.</p>
+                                 <div class="text-orange-500 font-bold mt-2"><span data-lang-key="duration_5">Duración:</span> <span data-lang-key="roadmap_5_duration">Continuo</span></div>
                             </div>
                             <div class="w-1/2 pl-8"></div>
                             <div class="absolute left-1/2 -ml-4 bg-orange-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">5</div>
@@ -396,37 +413,37 @@
 
                         <div class="relative pl-12">
                             <div class="absolute -left-4 top-1 bg-orange-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">1</div>
-                            <h3 class="font-bold text-xl">Fase 1: Diseño de Sistema a Medida</h3>
-                            <p class="text-sm text-justify mt-2">Diseñamos un dashboard exclusivo que automatiza el proceso de pedidos de material, con ID único y base de datos.</p>
-                            <div class="text-orange-500 font-bold mt-2">Duración: 1 Mes</div>
+                            <h3 class="font-bold text-xl" data-lang-key="roadmap_1_title_mob">Fase 1: Diseño de Sistema a Medida</h3>
+                            <p class="text-sm text-justify mt-2" data-lang-key="roadmap_1_desc_mob">Diseñamos un dashboard exclusivo que automatiza el proceso de pedidos de material, con ID único y base de datos.</p>
+                            <div class="text-orange-500 font-bold mt-2"><span data-lang-key="duration_mob_1">Duración:</span> 1 Mes</div>
                         </div>
 
                         <div class="relative pl-12">
                             <div class="absolute -left-4 top-1 bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">2</div>
-                            <h3 class="font-bold text-xl">Fase 2: Inmersión y Alineación de Marca</h3>
-                            <p class="text-sm text-justify mt-2">Recibimos capacitación sobre el manual de marca de Coppel para asegurar que cada generación visual respete y potencie la identidad de la marca.</p>
-                            <div class="text-blue-500 font-bold mt-2">Duración: 2 Semanas</div>
+                            <h3 class="font-bold text-xl" data-lang-key="roadmap_2_title_mob">Fase 2: Inmersión y Alineación de Marca</h3>
+                            <p class="text-sm text-justify mt-2" data-lang-key="roadmap_2_desc_mob">Recibimos capacitación sobre el manual de marca de Coppel para asegurar que cada generación visual respete y potencie la identidad de la marca.</p>
+                            <div class="text-blue-500 font-bold mt-2"><span data-lang-key="duration_mob_2">Duración:</span> 2 Semanas</div>
                         </div>
 
                         <div class="relative pl-12">
                             <div class="absolute -left-4 top-1 bg-orange-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">3</div>
-                            <h3 class="font-bold text-xl">Fase 3: Piloto Estratégico</h3>
-                            <p class="text-sm text-justify mt-2">Seleccionamos una línea de producto y definimos KPIs claros. Desplegamos una prueba de concepto para demostrar el valor y el ROI.</p>
-                            <div class="text-orange-500 font-bold mt-2">Duración: 2-3 Meses</div>
+                            <h3 class="font-bold text-xl" data-lang-key="roadmap_3_title_mob">Fase 3: Piloto Estratégico</h3>
+                            <p class="text-sm text-justify mt-2" data-lang-key="roadmap_3_desc_mob">Seleccionamos una línea de producto y definimos KPIs claros. Desplegamos una prueba de concepto para demostrar el valor y el ROI.</p>
+                            <div class="text-orange-500 font-bold mt-2"><span data-lang-key="duration_mob_3">Duración:</span> 2-3 Meses</div>
                         </div>
                         
                         <div class="relative pl-12">
                            <div class="absolute -left-4 top-1 bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">4</div>
-                            <h3 class="font-bold text-xl">Fase 4: Integración y Capacitación</h3>
-                            <p class="text-sm text-justify mt-2">Integramos nuestra plataforma con sus sistemas y capacitamos a sus equipos clave para maximizar la adopción y la eficiencia.</p>
-                             <div class="text-blue-500 font-bold mt-2">Duración: 4-6 Meses</div>
+                            <h3 class="font-bold text-xl" data-lang-key="roadmap_4_title_mob">Fase 4: Integración y Capacitación</h3>
+                            <p class="text-sm text-justify mt-2" data-lang-key="roadmap_4_desc_mob">Integramos nuestra plataforma con sus sistemas y capacitamos a sus equipos clave para maximizar la adopción y la eficiencia.</p>
+                             <div class="text-blue-500 font-bold mt-2"><span data-lang-key="duration_mob_4">Duración:</span> 4-6 Meses</div>
                         </div>
                         
                         <div class="relative pl-12">
                            <div class="absolute -left-4 top-1 bg-orange-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold shadow">5</div>
-                            <h3 class="font-bold text-xl">Fase 5: Escalado Omnicanal</h3>
-                            <p class="text-sm text-justify mt-2">Expandimos la solución a todas las unidades de negocio. La IA se convierte en el motor estándar para la creación de contenido.</p>
-                             <div class="text-orange-500 font-bold mt-2">Duración: Continuo</div>
+                            <h3 class="font-bold text-xl" data-lang-key="roadmap_5_title_mob">Fase 5: Escalado Omnicanal</h3>
+                            <p class="text-sm text-justify mt-2" data-lang-key="roadmap_5_desc_mob">Expandimos la solución a todas las unidades de negocio. La IA se convierte en el motor estándar para la creación de contenido.</p>
+                             <div class="text-orange-500 font-bold mt-2"><span data-lang-key="duration_mob_5">Duración:</span> Continuo</div>
                         </div>
 
                     </div>
@@ -435,21 +452,21 @@
         </section>
 
         <section id="cta" aria-labelledby="cta-heading" class="text-center bg-white dark:bg-gray-900 py-16 md:py-20 -mx-4 sm:-mx-6 md:-mx-8 px-4 sm:px-6 md:px-8 rounded-t-2xl shadow-inner animated-item">
-            <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold mb-4 max-w-2xl mx-auto">El Futuro del Retail es Visual.</h2>
-            <p class="max-w-3xl mx-auto text-lg mb-8">Navegue por nuestros casos de éxito o agende una demostración para diseñar juntos el roadmap que llevará a Coppel al siguiente nivel de innovación visual.</p>
+            <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold mb-4 max-w-2xl mx-auto" data-lang-key="cta_title">El Futuro del Retail es Visual.</h2>
+            <p class="max-w-3xl mx-auto text-lg mb-8" data-lang-key="cta_subtitle">Navegue por nuestros casos de éxito o agende una demostración para diseñar juntos el roadmap que llevará a Coppel al siguiente nivel de innovación visual.</p>
             
             <div class="max-w-md mx-auto mb-8 cursor-pointer group animated-item" id="pdf-modal-trigger" style="transition-delay: 0.2s;">
                  <div class="section-card p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex items-center gap-4 text-left">
                      <svg class="w-12 h-12 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                      <div>
-                         <h4 class="font-bold text-lg">Ver Portafolio de Casos de Éxito</h4>
-                         <p class="text-sm">Explore nuestro portafolio de imágenes con IA.</p>
+                         <h4 class="font-bold text-lg" data-lang-key="portfolio_title">Ver Portafolio de Casos de Éxito</h4>
+                         <p class="text-sm" data-lang-key="portfolio_desc">Explore nuestro portafolio de imágenes con IA.</p>
                      </div>
                  </div>
             </div>
 
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 animated-item" style="transition-delay: 0.4s;">
-                <a href="https://calendar.app.google/nWMuRNmpovr8zTzA7" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg w-full sm:w-auto" style="background-color: var(--coppel-blue);">Agendar Demo Estratégica</a>
+                <a href="https://calendar.app.google/nWMuRNmpovr8zTzA7" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg w-full sm:w-auto" style="background-color: var(--coppel-blue);" data-lang-key="cta_button">Agendar Demo Estratégica</a>
             </div>
         </section>
 
@@ -458,9 +475,13 @@
     <footer role="contentinfo" class="text-center py-8 px-4" style="background-color: var(--dark-bg); color: var(--light-bg);">
         <div class="max-w-3xl mx-auto">
             <hr class="border-gray-700 my-6">
-            <p class="mb-2">Diseñado por <a href="https://studio--hitsterai.us-central1.hosted.app/es" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline" style="color: #FFCA28;">hitster Ai</a></p>
-            <a href="mailto:baez@hitster.page" class="hover:underline" style="color: #FFCA28;">Contáctanos</a>
-            <p class="mt-4 text-sm text-gray-400">&copy; 2025 hitster Ai. Todos los derechos reservados.</p>
+            <div class="flex justify-center items-center gap-6 mb-2">
+                <a href="mailto:baez@hitster.page" class="hover:underline" style="color: #FFCA28;" data-lang-key="footer_contact">Contáctanos</a>
+                <span class="text-gray-500">|</span>
+                <button id="privacy-modal-trigger" class="hover:underline" style="color: #FFCA28;" data-lang-key="footer_privacy">Aviso de Privacidad</button>
+            </div>
+             <p class="mb-2" data-lang-key="footer_designed_by">Diseñado por <a href="https://studio--hitsterai.us-central1.hosted.app/es" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline" style="color: #FFCA28;">hitster Ai</a></p>
+            <p class="mt-4 text-sm text-gray-400" data-lang-key="footer_rights">&copy; 2025 hitster Ai. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -468,7 +489,7 @@
     <div id="pdf-modal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
         <div class="bg-light-bg dark:bg-dark-bg rounded-lg shadow-xl w-full max-w-4xl h-[90vh] flex flex-col">
             <div class="flex justify-between items-center p-4 border-b dark:border-gray-800">
-                <h3 class="text-lg font-bold">Portafolio de Casos de Éxito</h3>
+                <h3 class="text-lg font-bold" data-lang-key="modal_title">Portafolio de Casos de Éxito</h3>
                 <button id="pdf-modal-close" class="text-2xl font-bold text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white">&times;</button>
             </div>
             <div class="flex-grow p-1">
@@ -477,8 +498,361 @@
         </div>
     </div>
 
+    <!-- Privacy Modal -->
+    <div id="privacy-modal" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
+        <div class="bg-light-bg dark:bg-dark-bg rounded-lg shadow-xl w-full max-w-4xl h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b dark:border-gray-800">
+                <h3 class="text-lg font-bold" data-lang-key="privacy_title">Aviso de Privacidad de Hitster Media</h3>
+                <button id="privacy-modal-close" class="text-2xl font-bold text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white">&times;</button>
+            </div>
+            <div class="flex-grow p-6 overflow-y-auto" data-lang-key="privacy_content">
+                 <!-- El contenido se inyectará aquí -->
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
+        // Lógica de Traducción
+        const translations = {
+            es: {
+                nav_language: "Idioma",
+                nav_solutions: "Soluciones",
+                nav_video: "Video",
+                nav_differentiator: "Diferenciador",
+                nav_guarantee: "Garantía",
+                nav_schedule_demo: "Agendar Demo",
+                nav_solutions_mob: "Soluciones",
+                nav_video_mob: "Video",
+                nav_differentiator_mob: "Diferenciador",
+                nav_guarantee_mob: "Garantía",
+                nav_schedule_demo_mob: "Agendar Demo",
+                header_title: "La Evolución del Contenido Retail",
+                header_subtitle: "Una alianza estratégica para dominar el ecosistema visual del futuro, hoy.",
+                summary_title: "Resumen Ejecutivo: El Valor de la Alianza",
+                summary_1_title: "ROI Acelerado",
+                summary_1_desc: "Reduzca drásticamente los costos de producción de campañas y catálogos, mientras aumenta la conversión con visuales hiper-personalizados que conectan con cada segmento de cliente.",
+                summary_2_title: "Velocidad Competitiva",
+                summary_2_desc: "Pase de semanas a horas en la conceptualización y ejecución de campañas. Responda a las tendencias del mercado en tiempo real y deje atrás a la competencia.",
+                summary_3_title: "Soberanía Creativa",
+                summary_3_desc: "Obtenga la propiedad legal total de cada imagen y video. Convierta la IA en un activo seguro y 100% suyo, eliminando cualquier riesgo de propiedad intelectual.",
+                solutions_title: "Soluciones Estratégicas y Casos de Uso",
+                solution_1_title: "E-commerce de Alto Impacto",
+                solution_1_desc: "Transforme sus páginas de producto de estáticas a dinámicas, mostrando cada artículo en el contexto perfecto para motivar la compra.",
+                use_case_title: "Caso de Uso:",
+                solution_1_case: "Generar imágenes de un sofá en 5 estilos de decoración distintos (minimalista, industrial, etc.).",
+                kpi_title: "KPI Impactado:",
+                solution_1_kpi: "Aumento del +15% en la tasa de conversión.",
+                solution_2_title: "Marketing y Publicidad Ágil",
+                solution_2_desc: "Produzca un volumen masivo de creatividades para redes sociales, display y email marketing, personalizadas para cada audiencia y plataforma.",
+                use_case_title_2: "Caso de Uso:",
+                solution_2_case: "Crear 100 variantes de un anuncio (imagen y video corto) para El Buen Fin en menos de 24 horas.",
+                kpi_title_2: "KPI Impactado:",
+                solution_2_kpi: "Reducción del 70% en el tiempo de lanzamiento de campañas.",
+                video_title: "La Revolución del Video Cinematográfico",
+                video_subtitle: "La era del video de alta producción democratizado. Genere spots con una calidad visual y coherencia nunca antes vistas, a una fracción del costo y tiempo.",
+                veo_title: "Veo 3.1: Fotorrealismo",
+                veo_desc: "El motor ideal para spots de producto. Su capacidad para generar un fotorrealismo asombroso y mantener la coherencia de objetos en movimiento es perfecta para mostrar sus artículos con un nivel de detalle y credibilidad sin precedentes.",
+                sora_title: "Sora 2 Pro: Storytelling",
+                sora_desc: "La herramienta definitiva para campañas de branding. Permite crear mundos imaginativos y narrativas visuales complejas que conectan emocionalmente con la audiencia, llevando el storytelling de Coppel a una nueva dimensión.",
+                differentiator_title: "Nuestro Diferenciador: Más que un Proveedor, un Socio",
+                differentiator_1_title: "Tecnología Curada",
+                differentiator_1_desc: "No dependemos de una sola API. Integramos y afinamos los mejores modelos del mundo (Veo, Sora, Nano-Banana) para el caso de uso específico del retail, ofreciendo una calidad inalcanzable.",
+                differentiator_2_title: "Enfoque de Partnership",
+                differentiator_2_desc: "Nos integramos con sus equipos. Entendemos sus objetivos de negocio y alineamos la tecnología para cumplirlos, actuando como una extensión de su departamento de innovación.",
+                legal_title: "Garantía Legal y Cesión de Derechos",
+                legal_desc: "Entendemos que la titularidad del contenido es un pilar para Coppel. El material generado por IA, en su estado puro, reside en una zona legalmente ambigua. Nuestro proceso elimina esta incertidumbre: la intervención creativa de nuestro equipo (edición, branding, composición, y post-producción) transforma el material base en una **obra derivada única y original**. A través de nuestro contrato de alianza, cedemos el 100% de la titularidad de esta obra final a Coppel, otorgando una propiedad intelectual clara, documentada y sin riesgos para su uso sin restricciones en cualquier medio, a perpetuidad.",
+                audio_cta: "Reproducir Mensaje Personal",
+                roadmap_title: "Roadmap de Alianza: De la Fundación al Liderazgo",
+                roadmap_1_title: "Fase 1: Diseño de Sistema a Medida",
+                roadmap_1_desc: "Diseñamos un dashboard exclusivo para Coppel que automatiza el proceso de pedidos de material. Cada solicitud genera un ID único y se almacena en una base de datos para un seguimiento impecable.",
+                duration: "Duración:",
+                roadmap_1_duration: "1 Mes",
+                roadmap_2_title: "Fase 2: Inmersión y Alineación de Marca",
+                roadmap_2_desc: "Recibimos una capacitación profunda sobre el manual de marca de Coppel. Este paso es crucial para alinear nuestros modelos de IA y asegurar que cada generación visual respete y potencie la identidad, tono y valores de la marca.",
+                duration_2: "Duración:",
+                roadmap_2_duration: "2 Semanas",
+                roadmap_3_title: "Fase 3: Piloto Estratégico",
+                roadmap_3_desc: "Seleccionamos una línea de producto y definimos KPIs claros. Desplegamos una prueba de concepto para demostrar el valor y el ROI en un entorno controlado.",
+                duration_3: "Duración:",
+                roadmap_3_duration: "2-3 Meses",
+                roadmap_4_title: "Fase 4: Integración y Capacitación",
+                roadmap_4_desc: "Integramos nuestra plataforma con sus sistemas (DAM, PIM) y capacitamos a sus equipos clave para maximizar la adopción y la eficiencia del flujo de trabajo.",
+                duration_4: "Duración:",
+                roadmap_4_duration: "4-6 Meses",
+                roadmap_5_title: "Fase 5: Escalado Omnicanal",
+                roadmap_5_desc: "Expandimos la solución a todas las unidades de negocio. La IA se convierte en el motor estándar para la creación de contenido visual en todo el ecosistema Coppel.",
+                duration_5: "Duración:",
+                roadmap_5_duration: "Continuo",
+                cta_title: "El Futuro del Retail es Visual.",
+                cta_subtitle: "Navegue por nuestros casos de éxito o agende una demostración para diseñar juntos el roadmap que llevará a Coppel al siguiente nivel de innovación visual.",
+                portfolio_title: "Ver Portafolio de Casos de Éxito",
+                portfolio_desc: "Explore nuestro portafolio de imágenes con IA.",
+                cta_button: "Agendar Demo Estratégica",
+                footer_designed_by: 'Diseñado por <a href="https://studio--hitsterai.us-central1.hosted.app/es" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline" style="color: #FFCA28;">hitster Ai</a>',
+                footer_contact: "Contáctanos",
+                footer_privacy: "Aviso de Privacidad",
+                footer_rights: "© 2025 hitster Ai. Todos los derechos reservados.",
+                modal_title: "Portafolio de Casos de Éxito",
+                privacy_title: "Aviso de Privacidad de Hitster Media",
+                privacy_content: `
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Fecha de última actualización: 23 de junio de 2025</p>
+                    <p class="text-justify mb-4">Bienvenido a Hitster Media. Tu privacidad es de suma importancia para nosotros. Este Aviso de Privacidad describe cómo recopilamos, utilizamos, protegemos y compartimos tu información personal cuando visitas y utilizas nuestro sitio web y nuestros servicios. Al utilizar Hitster Media, aceptas las prácticas descritas en este documento.</p>
+                    <h4 class="font-bold text-lg mb-2">1. Identidad y Domicilio del Responsable</h4>
+                    <p class="text-justify mb-4">Hitster Media (en adelante, "nosotros", "nuestro"), con domicilio en Avenida Francisco I. Madero 104, Colonia Céspedes, Pachuca de Soto, Hidalgo, C.P. 42090, es el responsable del tratamiento de tus datos personales.</p>
+                    <p class="text-justify mb-4">Para cualquier asunto relacionado con este aviso, puedes contactarnos a través del correo electrónico: baez@hitster.page</p>
+                    <h4 class="font-bold text-lg mb-2">2. Datos Personales que Recabamos</h4>
+                    <p class="text-justify mb-4">Recopilamos diferentes tipos de datos personales para operar y mejorar nuestros servicios:</p>
+                    <h5 class="font-semibold mb-2">A. Datos que nos proporcionas directamente:</h5>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li><b>Información de contacto y cuenta:</b> Nombre completo, dirección de correo electrónico, contraseña y otra información que proporciones al registrarte.</li>
+                        <li><b>Información de perfil:</b> Datos adicionales que decidas agregar a tu perfil de usuario.</li>
+                        <li><b>Comunicaciones:</b> Información que nos proporcionas al contactar a nuestro equipo de soporte o al comunicarte con nosotros por cualquier otro medio.</li>
+                    </ul>
+                    <h5 class="font-semibold mb-2">B. Datos que recopilamos automáticamente:</h5>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li><b>Información de uso:</b> Registramos cómo interactúas con nuestra plataforma, qué funcionalidades utilizas, la frecuencia y duración de tus visitas.</li>
+                        <li><b>Datos del dispositivo y conexión:</b> Dirección IP, tipo y versión del navegador, sistema operativo, identificadores únicos de dispositivo y otra información técnica.</li>
+                        <li><b>Cookies y tecnologías similares:</b> Utilizamos cookies, balizas web y otras tecnologías para recopilar información, mejorar la experiencia del usuario y para fines de análisis. Consulta nuestra sección sobre "Uso de Cookies" para más detalles.</li>
+                    </ul>
+                    <h4 class="font-bold text-lg mb-2">3. Finalidades del Tratamiento de Datos</h4>
+                    <p class="text-justify mb-4">Utilizamos tus datos personales para las siguientes finalidades:</p>
+                     <h5 class="font-semibold mb-2">A. Finalidades Primarias (necesarias para el servicio):</h5>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li>Proveer, operar y mantener nuestros servicios de producción audiovisual.</li>
+                        <li>Crear, gestionar y asegurar tu cuenta de usuario.</li>
+                        <li>Procesar tus solicitudes, responder a tus preguntas y brindarte soporte técnico.</li>
+                        <li>Garantizar la seguridad, prevenir fraudes y hacer cumplir nuestros términos y condiciones.</li>
+                        <li>Enviarte comunicaciones transaccionales importantes sobre tu cuenta o cambios en el servicio.</li>
+                    </ul>
+                     <h5 class="font-semibold mb-2">B. Finalidades Secundarias (requieren tu consentimiento):</h5>
+                     <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li>Realizar análisis estadísticos y de comportamiento para mejorar y optimizar nuestros servicios y desarrollar nuevas funcionalidades.</li>
+                        <li>Personalizar tu experiencia en nuestra plataforma.</li>
+                        <li>Enviarte boletines informativos (newsletters), promociones, ofertas especiales y otras comunicaciones de marketing sobre nuestros productos.</li>
+                    </ul>
+                    <p class="text-justify mb-4">Si no deseas que tus datos sean utilizados para estas finalidades secundarias, puedes manifestarlo enviando un correo a baez-@hitster.page.</p>
+                    <h4 class="font-bold text-lg mb-2">4. Transferencia de Datos Personales</h4>
+                    <p class="text-justify mb-4">No vendemos ni alquilamos tu información personal. Podemos compartir tus datos con terceros únicamente en las siguientes circunstancias:</p>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li><b>Proveedores de Servicios:</b> Compartimos información con terceros que nos prestan servicios, como proveedores de alojamiento en la nube (ej. AWS, Google Cloud), plataformas de análisis (ej. Google Analytics) y procesadores de pagos. Estos proveedores solo tienen acceso a los datos necesarios para realizar sus funciones y están obligados contractualmente a protegerlos.</li>
+                        <li><b>Cumplimiento de la Ley:</b> Podremos divulgar tu información si así lo exige la ley, una orden judicial o para proteger nuestros derechos, propiedad o seguridad, así como los de nuestros usuarios o el público en general.</li>
+                    </ul>
+                    <h4 class="font-bold text-lg mb-2">5. Uso de Cookies y Tecnologías Similares</h4>
+                    <p class="text-justify mb-4">Utilizamos cookies para mejorar la funcionalidad de nuestro sitio. Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo. Puedes configurar tu navegador para rechazar todas las cookies o para que te avise cuando se envía una. Sin embargo, si no aceptas las cookies, es posible que no puedas utilizar algunas partes de nuestro servicio.</p>
+                    <h4 class="font-bold text-lg mb-2">6. Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición)</h4>
+                    <p class="text-justify mb-4">Como titular de los datos, tienes derecho a:</p>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                         <li>Acceder a los datos personales que poseemos sobre ti.</li>
+                        <li>Rectificar tus datos si son inexactos o están incompletos.</li>
+                        <li>Cancelar tus datos cuando consideres que no se están utilizando conforme a los principios y deberes establecidos.</li>
+                        <li>Oponerte al tratamiento de tus datos para fines específicos.</li>
+                    </ul>
+                    <p class="text-justify mb-4">Para ejercer tus Derechos ARCO, envía una solicitud detallada a baez@hitster.page, incluyendo tu nombre completo, copia de una identificación oficial y una descripción clara de tu solicitud. Te responderemos en los plazos que marca la ley.</p>
+                    <h4 class="font-bold text-lg mb-2">7. Revocación del Consentimiento</h4>
+                    <p class="text-justify mb-4">Puedes revocar el consentimiento que nos hayas otorgado para el tratamiento de tus datos personales en cualquier momento. Ten en cuenta que la revocación no tendrá efectos retroactivos. Para revocar tu consentimiento, envía tu solicitud a baez-@hitster.page.</p>
+                    <h4 class="font-bold text-lg mb-2">8. Medidas de Seguridad</h4>
+                    <p class="text-justify mb-4">Hemos implementado medidas de seguridad administrativas, técnicas y físicas para proteger tus datos personales contra daño, pérdida, alteración, destrucción o el uso, acceso o tratamiento no autorizado.</p>
+                    <h4 class="font-bold text-lg mb-2">9. Cambios a este Aviso de Privacidad</h4>
+                    <p class="text-justify mb-4">Nos reservamos el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad. Cualquier cambio será notificado a través de nuestro sitio web o mediante comunicación directa a tu correo electrónico. Te recomendamos revisar periódicamente este aviso.</p>
+                `
+            },
+            en: {
+                nav_language: "Language",
+                nav_solutions: "Solutions",
+                nav_video: "Video",
+                nav_differentiator: "Differentiator",
+                nav_guarantee: "Guarantee",
+                nav_schedule_demo: "Schedule Demo",
+                nav_solutions_mob: "Solutions",
+                nav_video_mob: "Video",
+                nav_differentiator_mob: "Differentiator",
+                nav_guarantee_mob: "Guarantee",
+                nav_schedule_demo_mob: "Schedule Demo",
+                header_title: "The Evolution of Retail Content",
+                header_subtitle: "A strategic alliance to master the visual ecosystem of the future, today.",
+                summary_title: "Executive Summary: The Value of the Alliance",
+                summary_1_title: "Accelerated ROI",
+                summary_1_desc: "Drastically reduce production costs for campaigns and catalogs, while increasing conversion with hyper-personalized visuals that connect with every customer segment.",
+                summary_2_title: "Competitive Speed",
+                summary_2_desc: "Go from weeks to hours in campaign conceptualization and execution. Respond to market trends in real-time and leave the competition behind.",
+                summary_3_title: "Creative Sovereignty",
+                summary_3_desc: "Gain full legal ownership of every image and video. Turn AI into a secure, 100% proprietary asset, eliminating any intellectual property risk.",
+                solutions_title: "Strategic Solutions and Use Cases",
+                solution_1_title: "High-Impact E-commerce",
+                solution_1_desc: "Transform your product pages from static to dynamic, showcasing each item in the perfect context to drive purchases.",
+                use_case_title: "Use Case:",
+                solution_1_case: "Generate images of a sofa in 5 different decor styles (minimalist, industrial, etc.).",
+                kpi_title: "KPI Impacted:",
+                solution_1_kpi: "+15% increase in conversion rate.",
+                solution_2_title: "Agile Marketing & Advertising",
+                solution_2_desc: "Produce a massive volume of creatives for social media, display, and email marketing, personalized for each audience and platform.",
+                use_case_title_2: "Use Case:",
+                solution_2_case: "Create 100 ad variations (image and short video) for Black Friday in under 24 hours.",
+                kpi_title_2: "KPI Impacted:",
+                solution_2_kpi: "70% reduction in campaign launch time.",
+                video_title: "The Cinematic Video Revolution",
+                video_subtitle: "The era of democratized high-production video. Generate commercials with unprecedented visual quality and coherence, at a fraction of the cost and time.",
+                veo_title: "Veo 3.1: Photorealism",
+                veo_desc: "The ideal engine for product commercials. Its ability to generate stunning photorealism and maintain object coherence in motion is perfect for showcasing your items with an unprecedented level of detail and credibility.",
+                sora_title: "Sora 2 Pro: Storytelling",
+                sora_desc: "The ultimate tool for branding campaigns. It allows for the creation of imaginative worlds and complex visual narratives that emotionally connect with the audience, taking Coppel's storytelling to a new dimension.",
+                differentiator_title: "Our Differentiator: More Than a Vendor, a Partner",
+                differentiator_1_title: "Curated Technology",
+                differentiator_1_desc: "We don't rely on a single API. We integrate and fine-tune the world's best models (Veo, Sora, Nano-Banana) for the specific use case of retail, delivering unmatched quality.",
+                differentiator_2_title: "Partnership Approach",
+                differentiator_2_desc: "We integrate with your teams. We understand your business goals and align the technology to meet them, acting as an extension of your innovation department.",
+                legal_title: "Legal Guarantee and Rights Assignment",
+                legal_desc: "We understand that content ownership is a pillar for Coppel. AI-generated material, in its pure state, resides in a legally ambiguous zone. Our process eliminates this uncertainty: our team's creative intervention (editing, branding, composition, and post-production) transforms the base material into a **unique and original derivative work**. Through our partnership agreement, we assign 100% ownership of this final work to Coppel, granting clear, documented, and risk-free intellectual property for unrestricted use in any medium, in perpetuity.",
+                audio_cta: "Play Personal Message",
+                roadmap_title: "Alliance Roadmap: From Foundation to Leadership",
+                roadmap_1_title: "Phase 1: Custom System Design",
+                roadmap_1_desc: "We design an exclusive dashboard for Coppel that automates the material request process. Each request generates a unique ID and is stored in a database for flawless tracking.",
+                duration: "Duration:",
+                roadmap_1_duration: "1 Month",
+                roadmap_2_title: "Phase 2: Brand Immersion and Alignment",
+                roadmap_2_desc: "We receive in-depth training on Coppel's brand manual. This crucial step aligns our AI models to ensure every visual generation respects and enhances the brand's identity, tone, and values.",
+                duration_2: "Duration:",
+                roadmap_2_duration: "2 Weeks",
+                roadmap_3_title: "Phase 3: Strategic Pilot",
+                roadmap_3_desc: "We select a product line and define clear KPIs. We deploy a proof-of-concept to demonstrate value and ROI in a controlled environment.",
+                duration_3: "Duration:",
+                roadmap_3_duration: "2-3 Months",
+                roadmap_4_title: "Phase 4: Integration and Training",
+                roadmap_4_desc: "We integrate our platform with your systems (DAM, PIM) and train your key teams to maximize adoption and workflow efficiency.",
+                duration_4: "Duration:",
+                roadmap_4_duration: "4-6 Months",
+                roadmap_5_title: "Phase 5: Omnichannel Scaling",
+                roadmap_5_desc: "We expand the solution to all business units. AI becomes the standard engine for visual content creation across the entire Coppel ecosystem.",
+                duration_5: "Duration:",
+                roadmap_5_duration: "Ongoing",
+                cta_title: "The Future of Retail is Visual.",
+                cta_subtitle: "Browse our success stories or schedule a demo to jointly design the roadmap that will take Coppel to the next level of visual innovation.",
+                portfolio_title: "View Portfolio of Success Stories",
+                portfolio_desc: "Explore our portfolio of AI-powered images.",
+                cta_button: "Schedule Strategic Demo",
+                footer_designed_by: 'Designed by <a href="https://studio--hitsterai.us-central1.hosted.app/es" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline" style="color: #FFCA28;">hitster Ai</a>',
+                footer_contact: "Contact Us",
+                footer_privacy: "Privacy Notice",
+                footer_rights: "© 2025 hitster Ai. All rights reserved.",
+                modal_title: "Portfolio of Success Stories",
+                privacy_title: "Hitster Media Privacy Notice",
+                privacy_content: `
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Last updated: June 23, 2025</p>
+                    <p class="text-justify mb-4">Welcome to Hitster Media. Your privacy is of the utmost importance to us. This Privacy Notice describes how we collect, use, protect, and share your personal information when you visit and use our website and services. By using Hitster Media, you agree to the practices described in this document.</p>
+                    <h4 class="font-bold text-lg mb-2">1. Identity and Address of the Controller</h4>
+                    <p class="text-justify mb-4">Hitster Media (hereinafter, "we", "us", "our"), with an address at Avenida Francisco I. Madero 104, Colonia Céspedes, Pachuca de Soto, Hidalgo, C.P. 42090, is the controller of your personal data.</p>
+                    <p class="text-justify mb-4">For any matter related to this notice, you can contact us via email: baez@hitster.page</p>
+                    <h4 class="font-bold text-lg mb-2">2. Personal Data We Collect</h4>
+                    <p class="text-justify mb-4">We collect different types of personal data to operate and improve our services:</p>
+                    <h5 class="font-semibold mb-2">A. Data you provide directly:</h5>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li><b>Contact and account information:</b> Full name, email address, password, and other information you provide upon registration.</li>
+                        <li><b>Profile information:</b> Additional data you choose to add to your user profile.</li>
+                        <li><b>Communications:</b> Information you provide when contacting our support team or communicating with us by any other means.</li>
+                    </ul>
+                    <h5 class="font-semibold mb-2">B. Data we collect automatically:</h5>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li><b>Usage information:</b> We record how you interact with our platform, what features you use, and the frequency and duration of your visits.</li>
+                        <li><b>Device and connection data:</b> IP address, browser type and version, operating system, unique device identifiers, and other technical information.</li>
+                        <li><b>Cookies and similar technologies:</b> We use cookies, web beacons, and other technologies to collect information, improve user experience, and for analytical purposes. See our "Use of Cookies" section for more details.</li>
+                    </ul>
+                    <h4 class="font-bold text-lg mb-2">3. Purposes of Data Processing</h4>
+                    <p class="text-justify mb-4">We use your personal data for the following purposes:</p>
+                     <h5 class="font-semibold mb-2">A. Primary Purposes (necessary for the service):</h5>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li>To provide, operate, and maintain our audiovisual production services.</li>
+                        <li>To create, manage, and secure your user account.</li>
+                        <li>To process your requests, answer your questions, and provide you with technical support.</li>
+                        <li>To ensure security, prevent fraud, and enforce our terms and conditions.</li>
+                        <li>To send you important transactional communications about your account or service changes.</li>
+                    </ul>
+                     <h5 class="font-semibold mb-2">B. Secondary Purposes (require your consent):</h5>
+                     <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li>To perform statistical and behavioral analysis to improve and optimize our services and develop new features.</li>
+                        <li>To personalize your experience on our platform.</li>
+                        <li>To send you newsletters, promotions, special offers, and other marketing communications about our products.</li>
+                    </ul>
+                    <p class="text-justify mb-4">If you do not want your data to be used for these secondary purposes, you can state so by sending an email to baez-@hitster.page.</p>
+                    <h4 class="font-bold text-lg mb-2">4. Transfer of Personal Data</h4>
+                    <p class="text-justify mb-4">We do not sell or rent your personal information. We may share your data with third parties only in the following circumstances:</p>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                        <li><b>Service Providers:</b> We share information with third parties who provide services to us, such as cloud hosting providers (e.g., AWS, Google Cloud), analytics platforms (e.g., Google Analytics), and payment processors. These providers only have access to the data necessary to perform their functions and are contractually obligated to protect it.</li>
+                        <li><b>Compliance with the Law:</b> We may disclose your information if required by law, a court order, or to protect our rights, property, or safety, as well as those of our users or the general public.</li>
+                    </ul>
+                    <h4 class="font-bold text-lg mb-2">5. Use of Cookies and Similar Technologies</h4>
+                    <p class="text-justify mb-4">We use cookies to improve the functionality of our site. Cookies are small text files stored on your device. You can set your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some parts of our service.</p>
+                    <h4 class="font-bold text-lg mb-2">6. ARCO Rights (Access, Rectification, Cancellation, and Opposition)</h4>
+                    <p class="text-justify mb-4">As the data subject, you have the right to:</p>
+                    <ul class="list-disc list-inside text-justify mb-4 space-y-2">
+                         <li>Access the personal data we hold about you.</li>
+                        <li>Rectify your data if it is inaccurate or incomplete.</li>
+                        <li>Cancel your data when you believe it is not being used in accordance with the established principles and duties.</li>
+                        <li>Object to the processing of your data for specific purposes.</li>
+                    </ul>
+                    <p class="text-justify mb-4">To exercise your ARCO Rights, please send a detailed request to baez@hitster.page, including your full name, a copy of an official ID, and a clear description of your request. We will respond within the timeframes established by law.</p>
+                    <h4 class="font-bold text-lg mb-2">7. Revocation of Consent</h4>
+                    <p class="text-justify mb-4">You may revoke the consent you have given us for the processing of your personal data at any time. Please note that the revocation will not have retroactive effects. To revoke your consent, send your request to baez-@hitster.page.</p>
+                    <h4 class="font-bold text-lg mb-2">8. Security Measures</h4>
+                    <p class="text-justify mb-4">We have implemented administrative, technical, and physical security measures to protect your personal data against damage, loss, alteration, destruction, or unauthorized use, access, or processing.</p>
+                    <h4 class="font-bold text-lg mb-2">9. Changes to this Privacy Notice</h4>
+                    <p class="text-justify mb-4">We reserve the right to make modifications or updates to this privacy notice at any time. Any changes will be notified through our website or via direct communication to your email. We recommend you review this notice periodically.</p>
+                `
+            }
+        };
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            localStorage.setItem('language', lang);
+            const elements = document.querySelectorAll('[data-lang-key]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    // Use innerHTML to allow for bold tags and other HTML inside the translations
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Lógica para el interruptor de idioma
+        const langButton = document.getElementById('lang-button');
+        const langMenu = document.getElementById('lang-menu');
+        const langLinks = langMenu.querySelectorAll('a');
+        const mobLangSwitches = document.querySelectorAll('.lang-switch-mob');
+
+        langButton.addEventListener('click', () => {
+            langMenu.classList.toggle('hidden');
+        });
+
+        langLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = e.target.getAttribute('data-lang');
+                setLanguage(lang);
+                langMenu.classList.add('hidden');
+            });
+        });
+        
+        mobLangSwitches.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const lang = e.target.getAttribute('data-lang');
+                setLanguage(lang);
+                 mobileMenu.classList.add('hidden');
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!document.getElementById('lang-dropdown').contains(event.target)) {
+                langMenu.classList.add('hidden');
+            }
+        });
+
+        // Set initial language
+        const savedLang = localStorage.getItem('language') || 'es';
+        setLanguage(savedLang);
+
+
         // Lógica para el interruptor de tema
         const themeToggleBtn = document.getElementById('theme-toggle');
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -557,7 +931,6 @@
             pdfIframe.src = ''; // Detiene la carga del PDF
         });
         
-        // Cierra el modal si se hace clic fuera del contenido
         pdfModal.addEventListener('click', (event) => {
             if (event.target === pdfModal) {
                  pdfModal.classList.add('hidden');
@@ -565,9 +938,28 @@
             }
         });
 
+        // Lógica para el modal de Privacidad
+        const privacyModal = document.getElementById('privacy-modal');
+        const privacyModalTrigger = document.getElementById('privacy-modal-trigger');
+        const privacyModalClose = document.getElementById('privacy-modal-close');
+
+        privacyModalTrigger.addEventListener('click', () => {
+            privacyModal.classList.remove('hidden');
+        });
+
+        privacyModalClose.addEventListener('click', () => {
+            privacyModal.classList.add('hidden');
+        });
+
+        privacyModal.addEventListener('click', (event) => {
+            if (event.target === privacyModal) {
+                 privacyModal.classList.add('hidden');
+            }
+        });
+
         // Lógica para el carrusel de videos
         const swiper = new Swiper('.video-carousel', {
-            loop: true,
+            loop: false,
             effect: 'fade',
             fadeEffect: {
                 crossFade: true
