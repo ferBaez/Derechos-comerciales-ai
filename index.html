@@ -92,11 +92,9 @@
             height: 100%;
         }
         /* Estilos del carrusel */
-        .swiper-slide iframe {
-            pointer-events: none;
-        }
-        .swiper-slide-active iframe {
-            pointer-events: auto;
+        .swiper-slide {
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translate3d(0,0,0);
         }
         .video-carousel-container {
             padding-bottom: 2.5rem; /* Espacio para la paginación */
@@ -108,6 +106,16 @@
             color: var(--hitster-orange) !important;
             transform: scale(0.7);
             transition: transform 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 9999px;
+            width: 44px !important;
+            height: 44px !important;
+        }
+        .dark .swiper-button-next, .dark .swiper-button-prev {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 1.5rem !important;
         }
         .swiper-button-next:hover, .swiper-button-prev:hover {
             transform: scale(0.85);
@@ -201,8 +209,8 @@
                     <div class="swiper-pagination"></div>
                 </div>
                 <!-- Add Navigation -->
-                <div class="swiper-button-prev left-0 hidden md:flex"></div>
-                <div class="swiper-button-next right-0 hidden md:flex"></div>
+                <div class="swiper-button-prev -left-4 sm:-left-12"></div>
+                <div class="swiper-button-next -right-4 sm:-right-12"></div>
             </div>
         </div>
     </header>
@@ -563,10 +571,6 @@
             effect: 'fade',
             fadeEffect: {
                 crossFade: true
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
             },
             pagination: {
                 el: '.swiper-pagination',
