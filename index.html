@@ -38,6 +38,7 @@
 
     <!-- ============== SCRIPTS Y ESTILOS ============== -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -81,6 +82,7 @@
             height: 0;
             overflow: hidden;
             max-width: 100%;
+            background-color: #000;
         }
         .video-wrapper iframe {
             position: absolute;
@@ -88,6 +90,12 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: var(--hitster-orange) !important;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: var(--hitster-orange) !important;
         }
     </style>
 </head>
@@ -142,16 +150,40 @@
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 tracking-tight gradient-text animated-item">La Evolución del Contenido Retail</h1>
             <p class="max-w-3xl mx-auto text-lg md:text-xl animated-item" style="transition-delay: 0.2s;">Una alianza estratégica para dominar el ecosistema visual del futuro, hoy.</p>
             
-            <!-- YouTube Video Embed -->
+            <!-- Video Carousel -->
             <div class="max-w-4xl mx-auto mt-12 animated-item" style="transition-delay: 0.4s;">
-                <div class="video-wrapper rounded-xl shadow-2xl overflow-hidden border-4 border-white dark:border-gray-800">
-                    <iframe 
-                        src="https://www.youtube.com/embed/bPThroAxlFQ?si=rNa143bTxwUM2pj4" 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
+                <div class="swiper-container video-carousel rounded-xl shadow-2xl overflow-hidden border-4 border-white dark:border-gray-800">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/bPThroAxlFQ?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/NX9o_YfeLiY?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/89pMNvMGz2A?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide">
+                            <div class="video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/OQxKv7NoNVM?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
             </div>
         </div>
@@ -419,7 +451,7 @@
         </div>
     </div>
 
-
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         // Lógica para el interruptor de tema
         const themeToggleBtn = document.getElementById('theme-toggle');
@@ -505,6 +537,27 @@
                  pdfModal.classList.add('hidden');
                  pdfIframe.src = '';
             }
+        });
+
+        // Lógica para el carrusel de videos
+        const swiper = new Swiper('.video-carousel', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        swiper.on('slideChange', function () {
+            // Detener todos los videos
+            const iframes = document.querySelectorAll('.swiper-slide iframe');
+            iframes.forEach(iframe => {
+                iframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*');
+            });
         });
 
     </script>
